@@ -4,14 +4,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <!-- <link rel="stylesheet" href="styles.css">
+   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <title>Atout plus</title>
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
+  <main class="container">
+    <h1 class="text-center display-1">Atout Plus
+    </h1>
+    <h2 class="display-4">Projet pilote: Gardiens avertis</h2>
+
+    <form id="frm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Courriel</label>
+        <input type="email" class="form-control" id="email" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mot de passe</label>
+        <input type="password" class="form-control" id="pwd" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+    <div id="liste" class="d-none">
+      <hr />
+      <h3>Liste du matériel</h3>
+      <p>Téléchargez les documents suivants pour votre référence.  Ne pas recopier ces documents. Ils sont protégés par les droits d'auteur. </p>
+      <ul>
+        <li><a href="#">Manuel des gardiens avertis</a></li>
+        <li><a href="#">Manuel sur les urgences</a></li>
+      </ul>
+    </div>   
+
   </main>
+  <script>
+    document.getElementById("frm").addEventListener("submit", submit);
+
+    function submit(evt) {
+      evt.preventDefault();
+      if (pwd.value === 'aa') {
+
+        liste.removeAttribute("class");
+        frm.setAttribute("class","d-none");
+
+      } else {
+        alert('mot de passe incorrect');
+      }
+    }
+  </script>
+
 </body>
+
+
+
 
 </html>
